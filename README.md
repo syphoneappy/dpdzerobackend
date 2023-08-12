@@ -65,7 +65,7 @@ Open a terminal and run:
 docker-compose --version
 ```
 
-##Troubleshooting
+## Troubleshooting
 
 
 If you encounter any issues during setup or while running the project, feel free to open an issue on GitHub.
