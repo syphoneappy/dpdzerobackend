@@ -4,8 +4,8 @@ services:
     image: postgres:13
     environment:
       POSTGRES_DB: dpdzero
-      POSTGRES_USER: harsh
-      POSTGRES_PASSWORD: FunnyFun@992
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
     ports:
       - "5432:5432"
 
