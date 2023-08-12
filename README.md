@@ -20,8 +20,9 @@ Follow these steps to set up and run the project:
 
 2. Create a virtual environment and install dependencies:
 
-pipenv install
-
+```sh 
+sudo apt install pipenv
+```
 3. Activate the virtual environment:
 
   ```sh 
