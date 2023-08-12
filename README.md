@@ -1,6 +1,10 @@
 # dpdzerobackend
 This is a small crud operation project where i have used token authentication and have all functionality related to crud, the project is developed in django
 
+Deployed on here you can check in this link 
+
+http://20.219.91.55:8000/index/ 
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
