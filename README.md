@@ -79,20 +79,28 @@ If you encounter any issues during setup or while running the project, feel free
 ## Using Endpoint 
 
 **/index/**
+
 Method: GET
+
 Description: This endpoint returns a simple "Hello world" message.
+
 Request:
 ```sh 
 GET /index/
 ```
+
 Response:
-{
+```sh{
     "Hello": "Hello world"
 }
+```
 
 **/register/**
+
 Method: POST
+
 Description: This endpoint is used to register a new user.
+
 Request:
 ```sh
 POST /register/
@@ -125,9 +133,13 @@ Response (Error):
     ]
 }
 ```
+
 **Endpoint:/token/**
+
 Method: POST
+
 Description: This endpoint is used to authenticate a user and generate an access token.
+
 Request:
 ```sh
 POST /token/
@@ -138,7 +150,9 @@ Request Body:
     "password": "existing_password"
 }
 ```
+
 Response (Success):
+
 ```sh
 {
     "status": "success",
@@ -150,6 +164,7 @@ Response (Success):
     "token": "Bearer <access_token>"
 }
 ```
+
 Response (Error):
 ```sh
 {
@@ -159,8 +174,11 @@ Response (Error):
         "password": "invalid_password"
     }
 }
+
 ```
+
 **Endpoint: /data/**
+
 Method: POST
 
 Description: This endpoint is used to store data.
@@ -194,6 +212,7 @@ Response (Error):
 }
 ```
 **Endpoint: /getdata/**
+
 Method: GET
 
 Description: This endpoint retrieves stored data based on a provided key.
@@ -203,6 +222,7 @@ Request:
 GET /getdata/?key=unique_key
 ```
 Response (Success):
+
 ```sh
 {
     "status": "success",
@@ -215,6 +235,7 @@ Response (Success):
 }
 ```
 Response (Error):
+
 ```sh
 {
     "message": "Key parameter missing."
@@ -236,7 +257,9 @@ Request Body:
     "value": "updated_data_value"
 }
 ```
+
 Response (Success):
+
 ```sh
 {
     "status": "success",
