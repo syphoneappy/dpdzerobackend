@@ -65,6 +65,10 @@ Open a terminal and run:
 docker-compose --version
 ```
 
+## Also Note:
+
+In the settings.py file, configure the database settings based on your preferences. Additionally, ensure that you make the corresponding adjustments in the docker-compose.yml file.
+
 ## Troubleshooting
 
 
