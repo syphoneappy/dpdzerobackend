@@ -74,3 +74,206 @@ In the settings.py file, configure the database settings based on your preferenc
 
 
 If you encounter any issues during setup or while running the project, feel free to open an issue on GitHub.
+
+
+## Using Endpoint 
+
+**/index/**
+Method: GET
+Description: This endpoint returns a simple "Hello world" message.
+Request:
+```sh 
+GET /index/
+```
+Response:
+{
+    "Hello": "Hello world"
+}
+
+**/register/**
+Method: POST
+Description: This endpoint is used to register a new user.
+Request:
+```sh
+POST /register/
+
+Request Body:
+{
+    "username": "new_user",
+    "password": "new_password"
+}
+```
+Response (Success):
+```sh
+{
+    "status": "success",
+    "message": "User successfully registered!",
+    "data": {
+        "username": "new_user",
+        "password": "new_password"
+    }
+}
+```
+Response (Error):
+```sh
+{
+    "username": [
+        "This field is required."
+    ],
+    "password": [
+        "This field is required."
+    ]
+}
+```
+**Endpoint:/token/**
+Method: POST
+Description: This endpoint is used to authenticate a user and generate an access token.
+Request:
+```sh
+POST /token/
+
+Request Body:
+{
+    "username": "existing_user",
+    "password": "existing_password"
+}
+```
+Response (Success):
+```sh
+{
+    "status": "success",
+    "message": "Access token generated successfully",
+    "data": {
+        "username": "existing_user",
+        "password": "existing_password"
+    },
+    "token": "Bearer <access_token>"
+}
+```
+Response (Error):
+```sh
+{
+    "message": "Invalid Credentials",
+    "data": {
+        "username": "invalid_user",
+        "password": "invalid_password"
+    }
+}
+```
+**Endpoint: /data/**
+Method: POST
+
+Description: This endpoint is used to store data.
+
+Request:
+```sh
+POST /data/
+
+Request Body:
+{
+    "key": "unique_key",
+    "value": "data_value"
+}
+```
+Response (Success):
+```sh
+{
+    "status": "success",
+    "message": "Data stored successfully."
+}
+```
+Response (Error):
+```sh
+{
+    "key": [
+        "This field is required."
+    ],
+    "value": [
+        "This field is required."
+    ]
+}
+```
+**Endpoint: /getdata/**
+Method: GET
+
+Description: This endpoint retrieves stored data based on a provided key.
+
+Request:
+```sh
+GET /getdata/?key=unique_key
+```
+Response (Success):
+```sh
+{
+    "status": "success",
+    "data": [
+        {
+            "key": "unique_key",
+            "value": "data_value"
+        }
+    ]
+}
+```
+Response (Error):
+```sh
+{
+    "message": "Key parameter missing."
+}
+```
+**Endpoint: /updatedata/**
+
+Method: PUT
+
+Description: This endpoint updates stored data based on a provided key.
+
+Request:
+```sh
+PUT /updatedata/
+
+Request Body:
+{
+    "key": "unique_key",
+    "value": "updated_data_value"
+}
+```
+Response (Success):
+```sh
+{
+    "status": "success",
+    "message": "Data updated successfully."
+}
+```
+Response (Error):
+```sh
+{
+    "key": [
+        "This field is required."
+    ],
+    "value": [
+        "This field is required."
+    ]
+}
+```
+**Endpoint: /delete/**
+
+Method: DELETE
+
+Description: This endpoint deletes stored data based on a provided key.
+
+Request:
+```sh 
+DELETE /delete/?key=unique_key
+```
+Response (Success):
+```
+{
+    "status": "success",
+    "message": "Data entry deleted successfully."
+}
+```
+Response (Error):
+```sh 
+{
+    "message": "Key parameter missing."
+}
+```
